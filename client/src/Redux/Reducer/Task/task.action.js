@@ -8,7 +8,9 @@ import {
   STATUS_TASK,
   UPDATE_TASK,
 } from "./task.type";
-const BASE_URL = "https://task-management-ga4v.onrender.com";
+
+const BASE_URL = "http://localhost:4000";
+// const BASE_URL = "https://task-management-ga4v.onrender.com";
 
 export const createTask = (taskData) => async (dispatch) => {
   try {
