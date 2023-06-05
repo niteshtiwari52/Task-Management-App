@@ -8,12 +8,13 @@ import {
   STATUS_TASK,
   UPDATE_TASK,
 } from "./task.type";
+const BASE_URL = "https://task-management-ga4v.onrender.com";
 
 export const createTask = (taskData) => async (dispatch) => {
   try {
     const newTask = await axios({
       method: "POST",
-      url: `http://localhost:4000/api/v1/task/create-task`,
+      url: `${BASE_URL}/api/v1/task/create-task`,
       data: { data: taskData },
     });
 
@@ -27,7 +28,7 @@ export const getTask = () => async (dispatch) => {
   try {
     const tasks = await axios({
       method: "GET",
-      url: `http://localhost:4000/api/v1/task/fetch-task`,
+      url: `${BASE_URL}/api/v1/task/fetch-task`,
     });
 
     return dispatch({ type: FETCH_TASK, payload: tasks.data });
@@ -42,7 +43,7 @@ export const updateTask = (data, id) => async (dispatch) => {
     // console.log(data);
     const task = await axios({
       method: "PUT",
-      url: `http://localhost:4000/api/v1/task/update-task/${id}`,
+      url: `${BASE_URL}/api/v1/task/update-task/${id}`,
       data: { data },
     });
 
@@ -57,7 +58,7 @@ export const updateTaskStatus = (data, id) => async (dispatch) => {
     // console.log(data);
     const task = await axios({
       method: "PUT",
-      url: `http://localhost:4000/api/v1/task/set-status/${id}`,
+      url: `${BASE_URL}/api/v1/task/set-status/${id}`,
       data: { data },
     });
 
@@ -72,7 +73,7 @@ export const deleteTask = (id) => async (dispatch) => {
     console.log(id);
     const tasks = await axios({
       method: "DELETE",
-      url: `http://localhost:4000/api/v1/task/delete-task/${id}`,
+      url: `${BASE_URL}/api/v1/task/delete-task/${id}`,
     });
     return dispatch({ type: DELETE_TASK, payload: tasks.data });
   } catch (error) {
