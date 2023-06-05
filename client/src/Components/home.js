@@ -8,18 +8,12 @@ import { getTask } from "../Redux/Reducer/Task/task.action";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const [dataFetch, setDataFetch] = useState(false);
-  const result = useSelector((globalState) => globalState.task.data);
-  useEffect(() => {
-    if (result) {
-      setDataFetch(true);
-    }
-  }, [result]);
+
   return (
     <>
       <Navbar />
       <div className=" flex flex-wrap mt-20">
-        {dataFetch ? <Cards /> : <Message />}
+        <Cards />
       </div>
     </>
   );
