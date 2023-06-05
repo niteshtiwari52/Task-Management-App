@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 connectDb();
 app.use(express.json()); //To accept Data
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "https://task-management-app-client.vercel.app" }));
 
 app.get("/", (req, res) => {
   res.json({
