@@ -35,7 +35,7 @@ const Cards = () => {
   };
 
   const handleSubmit = async () => {
-    console.log(taskData);
+    // console.log(taskData);
 
     await dispatch(updateTask(taskData, updatingTaskId));
     await dispatch(getTask());
@@ -51,7 +51,7 @@ const Cards = () => {
     if (result) {
       setAllTask(result);
     }
-    console.log(allTask);
+    // console.log(allTask);
   }, [result]);
 
   const handleDeleteTask = async (taskId) => {
@@ -67,12 +67,12 @@ const Cards = () => {
       category: taskData.category,
       description: taskData.description,
     });
-    console.log(taskData);
+    // console.log(taskData);
     // await dispatch(updateTask(taskData));
   };
 
   const markAsComplete = (id) => {
-    console.log(id, "completede");
+    // console.log(id, "completede");
 
     const data = {
       isCompleted: true,
@@ -92,7 +92,8 @@ const Cards = () => {
                     className={`w-full p-4 h-72 md:h-56 lg:h-48 rounded-t-2xl bg-blue-100`}
                   >
                     <img
-                      src="https://flowbite.com/docs/images/blog/image-1.jpg"
+                      // src="https://flowbite.com/docs/images/blog/image-1.jpg"
+                      src="https://todomytasks.netlify.app/images/defult%20task%20image.png"
                       alt="taskimage"
                       className="w-full h-full object-cover rounded-lg"
                     />

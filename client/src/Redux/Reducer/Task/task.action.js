@@ -70,7 +70,7 @@ export const updateTaskStatus = (data, id) => async (dispatch) => {
 
 export const deleteTask = (id) => async (dispatch) => {
   try {
-    console.log(id);
+    // console.log(id);
     const tasks = await axios({
       method: "DELETE",
       url: `${BASE_URL}/api/v1/task/delete-task/${id}`,

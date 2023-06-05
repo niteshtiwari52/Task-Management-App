@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   const handleSubmit = () => {
-    console.log(taskData);
+    // console.log(taskData);
     if (taskData.title && taskData.category && taskData.description) {
       dispatch(createTask(taskData));
       closeModal();
