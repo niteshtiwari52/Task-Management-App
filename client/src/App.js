@@ -4,14 +4,13 @@ import Home from "./Components/home";
 import { useDispatch } from "react-redux";
 import { getTask } from "./Redux/Reducer/Task/task.action";
 import { useEffect, useState } from "react";
+import Message from "./Components/Message";
 function App() {
   const dispatch = useDispatch();
-  const [dataFetch, setDataFetch] = useState(false);
 
-  // useEffect(() => {
-  //   dispatch(getTask());
-  //   setDataFetch(true);
-  // }, []);
+  useEffect(() => {
+    dispatch(getTask());
+  }, []);
   return (
     <>
       <Routes>
