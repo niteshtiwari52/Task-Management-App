@@ -15,14 +15,7 @@ const Home = () => {
 
   let [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    // console.log(result, result.length);
-    if (result === undefined) {
-      setIsOpen(true);
-    } else {
-      setIsOpen(false);
-    }
-  }, [result]);
+  
 
   function closeModal() {
     setIsOpen(false);
